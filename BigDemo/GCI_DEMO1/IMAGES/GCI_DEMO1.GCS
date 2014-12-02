@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<graphics_Composer version="2.0">
+  <item type="Properties" version="2">
+    <ResX>128</ResX>
+    <ResY>128</ResY>
+  </item>
+  <item type="Movie" version="2">
+    <File>7SEGORANGE_18X36.GIF</File>
+    <Name>7SEGORANGE_18X36.GIF</Name>
+    <Updated>2009/09/04 14:49:42</Updated>
+    <Position>
+      <Top>89</Top>
+      <Left>51</Left>
+      <Width>18</Width>
+      <Height>32</Height>
+    </Position>
+    <Source>
+      <Top>0</Top>
+      <Left>0</Left>
+      <Width>18</Width>
+      <Height>32</Height>
+    </Source>
+    <Pannable>False</Pannable>
+    <Tiled>
+      <Enabled>False</Enabled>
+    </Tiled>
+    <Movie>
+      <Start>0</Start>
+      <End>11</End>
+      <Frames>11</Frames>
+      <msFrame>255</msFrame>
+    </Movie>
+    <BitDepth>16</BitDepth>
+    <IgnoreScreensize>False</IgnoreScreensize>
+  </item>
+  <item type="Movie" version="2">
+    <File>10-GEAR.GIF</File>
+    <Name>10-GEAR.GIF</Name>
+    <Updated>2009/09/04 14:49:42</Updated>
+    <Position>
+      <Top>36</Top>
+      <Left>14</Left>
+      <Width>90</Width>
+      <Height>51</Height>
+    </Position>
+    <Source>
+      <Top>0</Top>
+      <Left>0</Left>
+      <Width>150</Width>
+      <Height>100</Height>
+    </Source>
+    <Pannable>False</Pannable>
+    <Tiled>
+      <Enabled>False</Enabled>
+    </Tiled>
+    <Movie>
+      <Start>0</Start>
+      <End>19</End>
+      <Frames>19</Frames>
+      <msFrame>50</msFrame>
+    </Movie>
+    <BitDepth>16</BitDepth>
+    <IgnoreScreensize>False</IgnoreScreensize>
+  </item>
+  <item type="Image" version="2">
+    <File>EXCLAIM.BMP</File>
+    <Name>EXCLAIM.BMP</Name>
+    <Updated>2010/06/21 12:43:44</Updated>
+    <Position>
+      <Top>7</Top>
+      <Left>11</Left>
+      <Width>22</Width>
+      <Height>23</Height>
+    </Position>
+    <Source>
+      <Top>0</Top>
+      <Left>0</Left>
+      <Width>22</Width>
+      <Height>23</Height>
+    </Source>
+    <Pannable>False</Pannable>
+    <Tiled>
+      <Enabled>False</Enabled>
+    </Tiled>
+    <BitDepth>16</BitDepth>
+    <IgnoreScreensize>False</IgnoreScreensize>
+  </item>
+  <item type="Image" version="2">
+    <File>INFO.BMP</File>
+    <Name>INFO.BMP</Name>
+    <Updated>2010/06/21 12:44:12</Updated>
+    <Position>
+      <Top>6</Top>
+      <Left>45</Left>
+      <Width>22</Width>
+      <Height>23</Height>
+    </Position>
+    <Source>
+      <Top>0</Top>
+      <Left>0</Left>
+      <Width>22</Width>
+      <Height>23</Height>
+    </Source>
+    <Pannable>False</Pannable>
+    <Tiled>
+      <Enabled>False</Enabled>
+    </Tiled>
+    <BitDepth>16</BitDepth>
+    <IgnoreScreensize>False</IgnoreScreensize>
+  </item>
+  <item type="Image" version="2">
+    <File>WARN.BMP</File>
+    <Name>WARN.BMP</Name>
+    <Updated>2010/06/21 12:46:12</Updated>
+    <Position>
+      <Top>6</Top>
+      <Left>82</Left>
+      <Width>22</Width>
+      <Height>23</Height>
+    </Position>
+    <Source>
+      <Top>0</Top>
+      <Left>0</Left>
+      <Width>22</Width>
+      <Height>23</Height>
+    </Source>
+    <Pannable>False</Pannable>
+    <Tiled>
+      <Enabled>False</Enabled>
+    </Tiled>
+    <BitDepth>16</BitDepth>
+    <IgnoreScreensize>False</IgnoreScreensize>
+  </item>
+</graphics_Composer>

@@ -1,0 +1,48 @@
+#platform "PoGa-GOLDELOX"
+
+
+// PoGa GCI Demo
+
+// This demo expects GCI_Demo.GCI at sector 0
+
+#inherit "4DGL_16bitColours.fnc"
+
+
+#DATA
+word info
+0x0000, 0x0000, 55, 91,     // "7segOrange_18x36.gif"
+0x001C, 0x0000, 17, 40,     // "10-gear.gif"
+0x017C, 0x0000, 14, 11,     // "exclaim.bmp"
+0x017E, 0x0000, 50, 11,     // "info.bmp"
+0x0180, 0x0000, 86, 12      // "warn.bmp"
+#END
+
+#constant OFFS_LO, OFFS_HI, XPOS, YPOS      // enumeration for the data statement entries
+
+func main()
+    var n;
+
+    repeat
+        pause(200);
+        gfx_Cls();
+        if(media_Init()) break;                                          // initialise the uSD card
+        putstr("No Disk");
+    forever
+
+    for(n := 0; n<sizeof(info); n+=4)
+        media_SetSector(info[n+OFFS_HI], info[n+OFFS_LO]);              // set the GCI offset
+        media_VideoFrame(info[n+XPOS], info[n+YPOS], 0);                // display the image
+    next
+
+    media_SetSector(0, 0);              // set the GCI offset for the 7seg display
+
+    repeat
+        media_Video(5, 80);                // display as a movie, forever
+    forever
+
+endfunc
+
+
+// =======================================================================
+
+

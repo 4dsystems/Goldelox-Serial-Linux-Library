@@ -1,0 +1,116 @@
+#platform "PoGa-GOLDELOX"
+
+
+// PoGa GCI Demo, will ony run from a PoGa file.
+
+// This program requires GCI_Deom1.DAT and GCI_Demo1.GCI
+// loade to the poga disk along with the executable.
+
+#inherit "4DGL_16bitColours.fnc"
+
+
+//=========================================================================
+#constant DAT_ENTRY_BYTE_SIZE   32                                          // 32 bytes, name=20, offset address=4, xoffs=2, yoffs=2, reserved=4
+var buffer[32];
+// GCI list buffer offsets
+#CONST
+    LB_NAME             0
+    LB_HI_OFFS          10
+    LB_LO_OFFS          11
+    LB_X_OFFS           12
+    LB_Y_OFFS           13
+    LB_RESERVED         14
+#END
+//=========================================================================
+func main()
+    var n, n1, n2;
+
+
+    repeat
+        pause(200);
+        gfx_Cls();
+        if(media_Init()) break;                                                         // initialise and test the uSD card
+        putstr("No Disk");
+    forever
+
+
+    //gfx_TransparentColour(BLACK);                       // use transparent mode, black is transparency reference
+    //gfx_Transparency(ON);
+
+    media_SelectGCIimage(2, n, 1);                      // "exclaim.bmp"
+    media_SelectGCIimage(3, n, 1);                      // "info.bmp"
+    media_SelectGCIimage(4, n, 1);                      // "exclaim.bmp"
+
+
+    repeat
+        n1:=media_SelectGCIimage(0, n1, 1);             // videos, using self propogating frame pointer
+        n2:=media_SelectGCIimage(1, n2, 1);
+   // forever
+        gfx_MoveTo(2,70);
+        print([DEC2Z] n1,"\n",[DEC2Z]n2); // print the frame numbers
+        //pause(1000);
+
+        if(joystick())
+        while(joystick());     // wait for button release
+        ProgramExit();         // exit to menu
+            //SystemReset();          // restart
+        endif
+
+    forever
+
+
+
+//00000000 000A 000A
+//00000002 002F 0009
+//00000004 0053 0009
+//00000006 0037 0058
+//00000022 0014 0026
+//00000000
+//00000002
+//00000004
+//00000006
+//00000022
+
+//00160017
+//00160017
+//00160017
+//00120020
+//0051002B
+
+//00160017
+//00160017
+//00160017
+//00120020
+//0051002B
+
+repeat forever
+
+    n := 1; //0;      // set image number
+
+    // to manually demonstrate what the media_SelectGCIimage function does...
+    media_PoGaFile(7);                                                  // to demonstrate, must set the correct PoGa file number
+
+    media_Offset(GCI_MAP_OFFSET);                                       // point to DAT map area
+    media_SetAdd(0, n*DAT_ENTRY_BYTE_SIZE);                             // load up the GCI entry names to the array
+    media_LoadArray(buffer, DAT_ENTRY_BYTE_SIZE);                       // load required entry to the array
+
+    print([HEX] buffer[LB_HI_OFFS],"\n");
+    print([HEX] buffer[LB_LO_OFFS],"\n");
+    print([HEX] buffer[LB_X_OFFS ],"\n");
+    print([HEX] buffer[LB_Y_OFFS ],"\n");
+    putstr(buffer);                                                   // shows GCI entry name
+
+    media_Offset(GCI_IMAGE_OFFSET);                                     // point to image area
+    media_SetSector(buffer[LB_HI_OFFS], buffer[LB_LO_OFFS]);            // set the image offset
+    media_VideoFrame(buffer[LB_X_OFFS], buffer[LB_Y_OFFS], 0);                  // display the image
+
+
+    repeat forever
+
+
+endfunc
+
+
+// =======================================================================
+
+

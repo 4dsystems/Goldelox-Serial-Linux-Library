@@ -1,0 +1,32 @@
+// Movie - "7SEGORANGE_18X36.GIF" Size 18x32
+// Width  = 18
+// Height = 32
+// Frames = 12
+// Usage: 7SEGORANGE_18X36.GIF(x, y);
+#constant 7SEGORANGE_18X36.GIF    $media_SetSector(0x0000, 0x0000); media_Video
+
+// Movie - "10-GEAR.GIF" Size 90x51
+// Width  = 90
+// Height = 51
+// Frames = 20
+// Usage: 10-GEAR.GIF(x, y);
+#constant 10-GEAR.GIF    $media_SetSector(0x0000, 0x001C); media_Video
+
+// Image - "EXCLAIM.BMP" Size 22x23
+// Width  = 22
+// Height = 23
+// Usage: EXCLAIM.BMP(x, y);
+#constant EXCLAIM.BMP    $media_SetSector(0x0000, 0x0183); media_Image
+
+// Image - "INFO.BMP" Size 22x23
+// Width  = 22
+// Height = 23
+// Usage: INFO.BMP(x, y);
+#constant INFO.BMP    $media_SetSector(0x0000, 0x0185); media_Image
+
+// Image - "WARN.BMP" Size 22x23
+// Width  = 22
+// Height = 23
+// Usage: WARN.BMP(x, y);
+#constant WARN.BMP    $media_SetSector(0x0000, 0x0187); media_Image
+
